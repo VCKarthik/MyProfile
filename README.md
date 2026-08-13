@@ -2,7 +2,7 @@
 
 Personal portfolio site for a Full Stack Software Engineer based in Buffalo, NY.
 
-**Live:** https://<username>.github.io/portfolio
+**Live:** https://vckarthik.github.io/MyProfile/
 
 ## Stack
 
