@@ -56,48 +56,6 @@
     revealables.forEach(function (el) { el.classList.add("is-in"); });
   }
 
-  /* ── Animated stat counters ──────────────────────────── */
-  var format = function (n, decimals) {
-    return decimals
-      ? n.toFixed(decimals)
-      : Math.round(n).toLocaleString("en-US");
-  };
-
-  var countUp = function (el) {
-    var target = parseFloat(el.dataset.count);
-    var decimals = parseInt(el.dataset.decimals || "0", 10);
-    var prefix = el.dataset.prefix || "";
-    var suffix = el.dataset.suffix || "";
-    var duration = 1400;
-    var start = performance.now();
-
-    var tick = function (now) {
-      var p = Math.min((now - start) / duration, 1);
-      var eased = 1 - Math.pow(1 - p, 3); // easeOutCubic
-      el.textContent = prefix + format(target * eased, decimals) + suffix;
-      if (p < 1) requestAnimationFrame(tick);
-    };
-    requestAnimationFrame(tick);
-  };
-
-  var counters = document.querySelectorAll("[data-count]");
-  if ("IntersectionObserver" in window && !window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
-    var counterObserver = new IntersectionObserver(function (entries) {
-      entries.forEach(function (entry) {
-        if (!entry.isIntersecting) return;
-        countUp(entry.target);
-        counterObserver.unobserve(entry.target);
-      });
-    }, { threshold: 0.5 });
-    counters.forEach(function (el) { counterObserver.observe(el); });
-  } else {
-    counters.forEach(function (el) {
-      el.textContent = (el.dataset.prefix || "") +
-        format(parseFloat(el.dataset.count), parseInt(el.dataset.decimals || "0", 10)) +
-        (el.dataset.suffix || "");
-    });
-  }
-
   /* ── Active section highlighting in nav ──────────────── */
   var navLinks = Array.prototype.slice.call(document.querySelectorAll('.nav__links a'));
   var sections = navLinks

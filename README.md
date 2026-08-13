@@ -13,12 +13,12 @@ The whole site is three files and loads in a single request each.
 | --- | --- |
 | `index.html` | Page content and structure |
 | `styles.css` | Styling, light/dark themes, responsive layout, print stylesheet |
-| `script.js` | Scroll reveals, stat counters, sticky nav, scrollspy, theme toggle |
+| `script.js` | Scroll reveals, sticky nav, scrollspy, theme toggle |
 
 ## Features
 
 - Light and dark themes, persisted to `localStorage`, defaulting to the OS preference
-- Scroll-triggered reveal animations and animated stat counters via `IntersectionObserver`
+- Scroll-triggered reveal animations via `IntersectionObserver`
 - Sticky navigation with active-section highlighting
 - Responsive down to mobile, with a collapsible menu
 - Respects `prefers-reduced-motion`

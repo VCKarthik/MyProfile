@@ -175,21 +175,6 @@ ul { margin: 0; padding: 0; list-style: none; }
 .hero__meta i { width: 4px; height: 4px; border-radius: 50%; background: var(--line); }
 .hero__cta { display: flex; gap: 14px; flex-wrap: wrap; }
 
-.hero__stats {
-  position: relative;
-  width: 100%; max-width: var(--maxw); margin: 0 auto;
-  display: grid; grid-template-columns: repeat(4, 1fr);
-  gap: 1px; background: var(--line);
-  border: 1px solid var(--line);
-  margin-top: 72px; margin-bottom: 72px;
-}
-.stat { background: var(--bg); padding: 26px 24px; }
-.stat b {
-  display: block; font-size: clamp(1.6rem, 3vw, 2.3rem); font-weight: 300;
-  letter-spacing: -.03em; margin-bottom: 6px; font-variant-numeric: tabular-nums;
-}
-.stat span { font-size: 12px; color: var(--text-mute); line-height: 1.4; display: block; }
-
 .scroll-hint {
   position: absolute; left: 50%; bottom: 26px; transform: translateX(-50%);
   width: 22px; height: 36px; border: 1px solid var(--line); border-radius: 12px;
@@ -364,7 +349,6 @@ ul { margin: 0; padding: 0; list-style: none; }
 @media (max-width: 980px) {
   .about, .edu { grid-template-columns: 1fr; }
   .about__card { position: static; }
-  .hero__stats { grid-template-columns: repeat(2, 1fr); }
   .job { grid-template-columns: 1fr; gap: 16px; }
   .job__meta { flex-direction: row; align-items: center; gap: 12px; }
 }
@@ -387,8 +371,6 @@ ul { margin: 0; padding: 0; list-style: none; }
   .nav__burger { display: flex; }
   .nav__actions .btn--sm { display: none; }
   .hero { padding-top: 120px; }
-  .hero__stats { margin-top: 48px; }
-  .stat { padding: 20px 18px; }
   .footer { flex-direction: column; }
 }
 
